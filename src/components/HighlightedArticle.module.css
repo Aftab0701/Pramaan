@@ -1,0 +1,16 @@
+.article {
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.article mark {
+  color: var(--ink);
+  background: linear-gradient(transparent 58%, #f0c9c2 58%);
+  transition: background 0.25s;
+}
+
+.article mark[data-active="true"] {
+  background: #f0c9c2;
+}

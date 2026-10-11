@@ -1,0 +1,115 @@
+.row {
+  border-top: 1px solid var(--ink);
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--ink);
+}
+
+.summary {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 16rem 1fr auto;
+  align-items: baseline;
+  gap: 24px;
+  padding: 20px 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  font-family: var(--serif);
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.values span + span::before {
+  content: "/";
+  color: var(--rule);
+  margin: 0 0.45em;
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 1rem;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.toggle {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 0.4s var(--ease);
+}
+
+.row[data-open="true"] .toggle {
+  transform: rotate(45deg);
+}
+
+.summary:hover .label {
+  color: var(--ink);
+}
+
+/* Animating grid rows lets the panel open to its natural height without measuring it. */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s var(--ease);
+}
+
+.row[data-open="true"] .panel {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  overflow: hidden;
+  padding-left: calc(16rem + 24px);
+}
+
+.reconciliation {
+  padding: 14px 0 22px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--muted);
+  max-width: 40rem;
+}
+
+.reconciliation strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.panelInner ul {
+  padding-bottom: 8px;
+}
+
+@media (max-width: 760px) {
+  .summary {
+    grid-template-columns: 1fr auto;
+  }
+
+  .label {
+    grid-column: 1 / -1;
+  }
+
+  .panelInner {
+    padding-left: 0;
+  }
+}

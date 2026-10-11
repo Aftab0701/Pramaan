@@ -1,0 +1,16 @@
+.notice {
+  border: 1px solid var(--red);
+  padding: 16px 20px;
+  font-size: 0.95rem;
+}
+
+.notice strong {
+  color: var(--red);
+}
+
+.notice code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--paper-deep);
+  padding: 1px 5px;
+}

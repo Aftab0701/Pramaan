@@ -1,0 +1,20 @@
+.tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.disputed {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.corroborated {
+  border-color: var(--ink);
+  color: var(--ink);
+}

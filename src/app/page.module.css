@@ -1,0 +1,70 @@
+.hero {
+  padding: 40px 0 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  max-width: 18ch;
+}
+
+.totals {
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.doors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 88px;
+  border-top: 1px solid var(--ink);
+}
+
+.door {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px 28px 32px 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+}
+
+.door + .door {
+  padding-left: 28px;
+  border-left: 1px solid var(--rule);
+}
+
+.door h2 {
+  font-size: 1.9rem;
+}
+
+.door p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.door span {
+  font-family: var(--mono);
+  color: var(--red);
+  transition: transform 0.35s var(--ease);
+}
+
+.door:hover span {
+  transform: translateX(8px);
+}
+
+@media (max-width: 760px) {
+  .doors {
+    grid-template-columns: 1fr;
+  }
+
+  .door + .door {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
